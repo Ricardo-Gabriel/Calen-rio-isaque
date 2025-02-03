@@ -1,78 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar App Vanilla JS</title>
 
+    <link rel="stylesheet" href="./css/calendario.css" />
+    <link rel="stylesheet" href="./css/darkMode.css" />
+    <link rel="stylesheet" href="./css/eventos.css" />
+  </head>
 
-  <link href="./css/style.css" rel="stylesheet">
-  <link href="./css/darkMode.css" rel="stylesheet">
-
-  <title>Calendario</title>
-</head>
-
-  
-  <div class="toggle">
-    <input id="switch" type="checkbox" name="theme">
-    <label for="switch">Toggle</label>
-  </div>
-
-
-
-<body>
-  <div id="container">
-      <div id="header">
-        <div id="monthDisplay"></div>
-
-        <div>
-          <button id="backButton">Voltar</button>
-          <button id="nextButton">Próximo</button>
+  <body>
+    <div class="toggle">
+      <input id="switch" type="checkbox" name="theme" />
+      <label for="switch">Toggle</label>
+    </div>
+    <container>
+      <div id="container">
+        <div id="header">
+          <div id="monthDisplay"></div>
+          <div>
+            <button id="backButton">Anterior</button>
+            <button id="nextButton">Proximo</button>
+          </div>
         </div>
-          
+
+        <div id="weekdays">
+          <div>Domingo</div>
+          <div>Segundo</div>
+          <div>Terca</div>
+          <div>Quarta</div>
+          <div>Quinta</div>
+          <div>Sexta</div>
+          <div>Sabado</div>
+        </div>
+
+        <div id="calendar"></div>
       </div>
 
-      <div id="weekdays">
-        <div>Domingo</div>
-        <div>Segunda-feira</div>
-        <div>Terça-feira</div>
-        <div>Quarta-feira</div>
-        <div>Quinta-feira</div>
-        <div>Sexta-feira</div>
-        <div>Sábado</div>
+      <div id="newEventModal">
+        <h2>New Event</h2>
+
+        <input id="eventTitleInput" placeholder="Event Title" />
+
+        <button id="saveButton">Save</button>
+        <button id="cancelButton">Cancel</button>
       </div>
 
+      <div id="deleteEventModal">
+        <h2>Event</h2>
 
-      <!-- div dinamic -->
-      <div id="calendar" ></div>
+        <p id="eventText"></p>
+
+        <button id="deleteButton">Delete</button>
+        <button id="closeButton">Close</button>
+      </div>
+
+      <div id="modalBackDrop"></div>
+    </container>
+    
+    
+    <!--Area para exibir os avisos do mês-->
+    <container>
+      <div id="quadroDeEventos">
+        <h2 id="avisosDoMes"></h2>
+        <div id="avisos"></div>
+      </div>
+    </container>
+
+
+
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/darkMode.js"></script>
 
    
-  </div>
-
-  <div id="newEventModal">
-    <h2>New Evente</h2>
-
-    <input id="eventTitleInput" placeholder="Event Title"/>
-
-    <button id="saveButton"> Salvar</button>
-    <button id="cancelButton">Cancelar</button>
-  </div>
-
-  <div id="deleteEventModal">
-    <h2>Evento</h2>
-
-    <div id="eventText"></div><br>
 
 
-    <button id="deleteButton">Deletar</button>
-    <button id="closeButton">Fechar</button>
-  </div>
-
-  <div id="modalBackDrop"></div>
-
-
-  <script src="scripts/darkMode.js"></script>
-  <script src="./scripts/main.js"></script>
-  
-</body>
+  </body>
 </html>
